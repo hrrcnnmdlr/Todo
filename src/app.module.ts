@@ -20,7 +20,7 @@ import { Todo } from './modules/todo/entities/todo.entity';
       database: process.env.DB_NAME,
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
-    }),
+    }), 
     TodoModule,
   ],
   controllers: [AppController],
