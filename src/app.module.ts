@@ -6,6 +6,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TodoModule } from './modules/todo/todo.module';
 import { JwtModule } from '@nestjs/jwt';
 import { UserModule } from './modules/user/user.module';
+import { ErrorInterceptor } from './modules/interceptors/error.interceptor';
+import { APP_FILTER } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -30,6 +32,12 @@ import { UserModule } from './modules/user/user.module';
     JwtModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_FILTER,
+      useClass: ErrorInterceptor,
+    },
+  ],
 })
 export class AppModule {}
