@@ -1,13 +1,26 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/modules/user/entities/user.entity';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  BaseEntity,
+} from 'typeorm';
 
 @Entity()
-export class Todo {
+export class Todo extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column('text')
+  @Column()
   title: string;
 
   @Column({ default: false })
-  isCompleted: boolean;
+  completed: boolean;
+
+  @Column()
+  userId: number;
+
+  @ManyToOne(() => User, (user) => user.todos)
+  user: User;
 }

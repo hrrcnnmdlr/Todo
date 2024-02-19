@@ -4,10 +4,14 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { TodoModule } from './modules/todo/todo.module';
-import { Todo } from './modules/todo/entities/todo.entity';
+import { JwtModule } from '@nestjs/jwt';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
+    JwtModule.register({
+      secret: 'your_secret_key', // Повинно співпадати з ключем, який ви використовували для підпису JWT
+    }),
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
@@ -22,6 +26,8 @@ import { Todo } from './modules/todo/entities/todo.entity';
       synchronize: true,
     }),
     TodoModule,
+    UserModule,
+    JwtModule,
   ],
   controllers: [AppController],
   providers: [AppService],
