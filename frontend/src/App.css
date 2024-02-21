@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #cdbbbb;
 }
 
 .App-logo {
@@ -32,7 +37,149 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Todo List */
+.todoList {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todoList h1 {
+  color: #333;
+}
+
+.todoList button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00b19a;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Registration Form and Todo List */
+.registrationForm,
+.todoList {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.registrationForm label,
+.todoList h1 {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.registrationForm input,
+.todoList input {
+  width: 94%;
+  margin-bottom: 10px;
+  padding: 3%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.registrationForm button{
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.registrationForm button:hover,
+.todoList button:hover {
+  background-color: #0056b3;
+  border-radius: 13px;
+}
+
+/* Login Form */
+.loginForm {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loginForm input {
+  width: 94%;
+  margin-bottom: 10px;
+  padding: 3%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.loginForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.loginForm button:hover {
+  background-color: #0056b3;
+  border-radius: 13px;
+}
+
+/* Nav Links */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+}
+
+.left-nav,
+.right-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left-nav li,
+.right-nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.left-nav li:last-child,
+.right-nav li:last-child {
+  margin-right: 0;
+}
+
+.left-nav a,
+.right-nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.left-nav a:hover,
+.right-nav a:hover {
+  color: #555;
 }
